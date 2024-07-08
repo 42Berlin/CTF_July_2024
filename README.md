@@ -2,7 +2,7 @@
 
 This repo contains the service used for the CTF hosted in 42Berlin in July 2024.
 
-In order to host it again, a new service needs to be deployed for it to submit the flags.
+In order to host it again, a new service needs to be deployed to submit the flags.
 The project https://ctfd.io/ is an easy and customizable option.
 
 ## Content

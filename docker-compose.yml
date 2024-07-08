@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  ctf:
+    build: './src'
+    ports:
+      - "22:22"
+      - "4242:4242"
+      - "42424:42424"

